@@ -1,0 +1,22 @@
+name: vrf-indexer
+description: VRF Request and Fulfillment Indexer
+field_selection:
+  transaction_fields:
+    - "hash"
+contracts:
+  - name: VRFCoordinatorV2
+    abi_file_path: abis/VRFCoordinatorV2.json
+    handler: ./src/EventHandlers.ts
+    events:
+      - event: "RequestRaised(uint256 indexed requestId, address indexed requester, uint32 numNumbers, uint256 clientSeed)"
+      - event: "RequestFulfilled(uint256 indexed requestId)"
+networks:
+  - id: 11155931  # Rise testnet
+    rpc_config:
+      url: https://testnet.riselabs.xyz/
+    start_block: 34500000
+    contracts:
+      - name: VRFCoordinatorV2
+        address:
+          - "0x9d57aB4517ba97349551C876a01a7580B1338909"
+

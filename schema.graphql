@@ -1,0 +1,22 @@
+type VrfRequest @entity {
+  id: ID!
+  requester: String!
+  numNumbers: Int!
+  clientSeed: String!
+  timestamp: Int!
+  blockNumber: BigInt!
+  transactionHash: String!
+  fulfilled: Boolean!
+  fulfilledTimestamp: Int
+  fulfilledBlockNumber: BigInt
+  fulfilledTransactionHash: String
+}
+
+type VrfStats @entity {
+  id: ID!
+  totalRequests: BigInt!
+  totalFulfilled: BigInt!
+  totalPending: BigInt!
+  lastRequestTimestamp: Int
+  lastFulfilledTimestamp: Int
+}
