@@ -10,7 +10,7 @@
     "postinstall": "test -d generated && ln -sf ../generated node_modules/generated || true"
   },
   "dependencies": {
-    "envio": "^2.8.0"
+    "envio": "2.32.3"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
